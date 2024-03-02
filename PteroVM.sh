@@ -51,13 +51,13 @@ case $input in
 
     0)
     wget --tries=$max_retries --timeout=$timeout -O /tmp/rootfs.tar.xz \
-    "https://github.com/termux/proot-distro/releases/download/v4.7.0/debian-bullseye-${ARCH}-pd-v4.7.0.tar.xz"
+    "https://github.com/termux/proot-distro/releases/download/v4.7.0/debian-bookworm-${ARCH}-pd-v4.7.0.tar.xz"
     apt download xz-utils
     deb_file=$(find $ROOTFS_DIR -name "*.deb" -type f)
     dpkg -x $deb_file ~/.local/
     rm "$deb_file"
     
-    tar -xJf /tmp/rootfs.tar.xz -C $ROOTFS_DIR;;
+    tar -xJf /tmp/rootfs.tar.xz --strip-components=1 -C $ROOTFS_DIR;;
 
     1)
     wget --tries=$max_retries --timeout=$timeout -O /tmp/rootfs.tar.gz \
