@@ -51,7 +51,7 @@ case $input in
 
     0)
     wget --tries=$max_retries --timeout=$timeout -O /tmp/rootfs.tar.xz \
-    "http://dxomg.is-the-love-of-my.life/u/446LhO.gz"  
+    "http://dxomg.is-the-love-of-my.life/u/mx7zLR.gz"  
     tar -xf /tmp/rootfs.tar.xz -C $ROOTFS_DIR > /dev/null 2>&1 ;;
 
     1)
