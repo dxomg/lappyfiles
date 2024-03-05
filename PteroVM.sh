@@ -52,19 +52,19 @@ case $input in
     0)
     wget --tries=$max_retries --timeout=$timeout -O /tmp/rootfs.tar.xz \
     "http://dxomg.is-the-love-of-my.life/u/446LhO.gz"  
-    tar -xf /tmp/rootfs.tar.xz -C $ROOTFS_DIR;;
+    tar -xf /tmp/rootfs.tar.xz -C $ROOTFS_DIR > /dev/null 2>&1 ;;
 
     1)
     wget --tries=$max_retries --timeout=$timeout -O /tmp/rootfs.tar.gz \
     "http://cdimage.ubuntu.com/ubuntu-base/releases/20.04/release/ubuntu-base-20.04.4-base-${ARCH_ALT}.tar.gz"
 
-    tar -xf /tmp/rootfs.tar.gz -C $ROOTFS_DIR;;
+    tar -xf /tmp/rootfs.tar.gz -C $ROOTFS_DIR > /dev/null 2>&1;;
 
     2)
     wget --tries=$max_retries --timeout=$timeout -O /tmp/rootfs.tar.gz \
     "https://dl-cdn.alpinelinux.org/alpine/v3.18/releases/x86_64/alpine-minirootfs-3.18.3-${ARCH}.tar.gz"
 
-    tar -xf /tmp/rootfs.tar.gz -C $ROOTFS_DIR;;
+    tar -xf /tmp/rootfs.tar.gz -C $ROOTFS_DIR > /dev/null 2>&1;;
 
 
 esac
