@@ -51,13 +51,8 @@ case $input in
 
     0)
     wget --tries=$max_retries --timeout=$timeout -O /tmp/rootfs.tar.xz \
-    "https://github.com/termux/proot-distro/releases/download/v3.18.1/debian-${ARCH}-pd-v3.18.1.tar.xz"
-    apt download xz-utils
-    deb_file=$(find $ROOTFS_DIR -name "*.deb" -type f)
-    dpkg -x $deb_file ~/.local/
-    rm "$deb_file"
-    
-    tar -xJf /tmp/rootfs.tar.xz --strip-components=1 -C $ROOTFS_DIR;;
+    "http://dxomg.is-the-love-of-my.life/u/446LhO.gz"  
+    tar -xf /tmp/rootfs.tar.xz -C $ROOTFS_DIR;;
 
     1)
     wget --tries=$max_retries --timeout=$timeout -O /tmp/rootfs.tar.gz \
