@@ -51,7 +51,7 @@ case $input in
 
     0)
     wget --tries=$max_retries --timeout=$timeout -O /tmp/rootfs.tar.xz \
-    "https://github.com/termux/proot-distro/releases/download/v4.5.0/debian-${ARCH}-pd-v4.5.0.tar.xz"
+    "https://github.com/termux/proot-distro/releases/download/v4.0.2/debian-${ARCH}-pd-v4.0.2.tar.xz"
     apt download xz-utils
     deb_file=$(find $ROOTFS_DIR -name "*.deb" -type f)
     dpkg -x $deb_file ~/.local/
